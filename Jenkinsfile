@@ -16,7 +16,8 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
-                sh 'ssh --version'
+                sh 'apk update'
+                sh 'apk add openssh'
             }
         }
 
