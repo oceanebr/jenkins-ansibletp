@@ -11,6 +11,7 @@
       file:
         path: /home/tpjenkins
         state: directory
+        
     - name: "Telechargement tp"
       git:
         repo: https://github.com/web-slate/simple-react-app-with-unit-testing
@@ -30,7 +31,3 @@
       shell:
         cmd: npm update
 
-    - name: "Installation vim"
-      apt:
-        name: vim
-        state: "present"
