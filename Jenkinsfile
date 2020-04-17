@@ -23,8 +23,8 @@ pipeline {
             colorized: true, 
             become: true,
             playbook: 'playbook/.yml'
-   )
-}
+        )
+        }
     }
 
 }
