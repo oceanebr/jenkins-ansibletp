@@ -7,29 +7,29 @@ pipeline {
         }
     }
 
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh 'npm test'
-                sh 'apk update'
-                sh 'apk add openssh'
-            }
-        }
+    // stages {
+    //     stage('Build') {
+    //         steps {
+    //             sh 'npm install'
+    //         }
+    //     }
+    //     stage('Test') {
+    //         steps {
+    //             sh 'npm test'
+    //             sh 'apk update'
+    //             sh 'apk add openssh'
+    //         }
+    //     }
 
-        // stage ('Config ssh') {
-        //     steps{
-        //         sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
-        //             sh 'ssh -o StrictHostKeyChecking=no user-ansible@jenkins uptime'
-        //             sh 'ssh -v user-ansible@jenkins'
-        //             sh 'scp ./source/filename user-ansible@jenkins:/remotehost/target'
-        //         }
-        //     }
-        // }
+    //     stage ('Config ssh') {
+    //         steps{
+    //             sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
+    //                 sh 'ssh -o StrictHostKeyChecking=no user-ansible@jenkins uptime'
+    //                 sh 'ssh -v user-ansible@jenkins'
+    //                 sh 'scp ./source/filename user-ansible@jenkins:/remotehost/target'
+    //             }
+    //         }
+    //     }
         stage('Install ansible') {
             steps {
                 sh 'apk add ansible'
