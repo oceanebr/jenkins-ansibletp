@@ -18,9 +18,11 @@ pipeline {
                 sh 'npm test'
             }
         }
-        stage('Deploiement Ansible') {
+        stage('Install ansible') {
             steps {
-                sh 'ansible --version'
+                sh 'apk add ansible'
+                sh 'apk add python3'
+                sh "ansible --version"
             }
         }
     }
