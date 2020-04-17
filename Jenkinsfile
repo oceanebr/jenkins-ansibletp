@@ -17,7 +17,7 @@ pipeline {
             steps {
                 sh 'apk update'
                 sh 'apk add openssh'
-                sh "ssh-keygen -t rsa -N '"
+                sh 'ssh-keygen -t rsa -N ""'
             }
         }
 
