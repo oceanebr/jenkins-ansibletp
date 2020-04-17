@@ -1,14 +1,12 @@
 node{
-    
+ stage('Clone'){
+     git :'https://github.com/oceanebr/jenkins-ansibletp.git'
+ }
+ stage('Ansible') {
+     sh 'ansible-playbook -i inventaire.ini playbook.yml'
+ }
 }
 
-
-// pipeline {
-//     agent {
-//         docker {
-//             image 'node:6-alpine'
-//         }
-//     }
 
 //     environment {
 //     CI = 'true'
