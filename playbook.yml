@@ -1,0 +1,36 @@
+- name: "TP Jenkins Ansible"
+  hosts: 192.168.1.59
+  remote_user: root
+  tasks:
+    - name: "Installation de git"
+      apt:
+        name: "git"
+        state: "present"
+
+    - name: "creation du dossier pour le tp"
+      file:
+        path: /home/tpjenkins
+        state: directory
+    - name: "Telechargement tp"
+      git:
+        repo: https://github.com/web-slate/simple-react-app-with-unit-testing
+        dest: /home/git
+
+    - name: "Installation nodejs"
+      apt:
+        name: nodejs
+        state: present
+
+    - name: "Installation npm"
+      apt:
+        name: npm
+        state: present
+
+    - name: "mise à jour npm"
+      shell:
+        cmd: npm update
+
+    - name: "Installation vim"
+      apt:
+        name: vim
+        state: "present"
