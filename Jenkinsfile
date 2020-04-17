@@ -13,13 +13,12 @@ pipeline {
     //             sh 'npm install'
     //         }
     //     }
-    //     stage('Test') {
-    //         steps {
-    //             sh 'npm test'
-    //             sh 'apk update'
-    //             sh 'apk add openssh'
-    //         }
-    //     }
+        stage('Test') {
+            steps {
+                sh 'apk update'
+                sh 'apk add openssh'
+            }
+        }
 
     //     stage ('Config ssh') {
     //         steps{
