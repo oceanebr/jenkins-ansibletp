@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Deploiement Ansible') {
             steps {
-                sh 'ls'
+                sh 'ansible --version'
             }
         }
     }
