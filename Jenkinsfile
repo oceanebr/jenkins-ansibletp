@@ -21,22 +21,22 @@ pipeline {
             }
         }
 
-        stage ('Config ssh') {
-            steps{
-                sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
-                    sh 'ssh -o StrictHostKeyChecking=no user-ansible@jenkins uptime'
-                    sh 'ssh -v user-ansible@jenkins'
-                    sh 'scp ./source/filename user-ansible@jenkins:/remotehost/target'
-                }
-            }
-        }
+        // stage ('Config ssh') {
+        //     steps{
+        //         sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
+        //             sh 'ssh -o StrictHostKeyChecking=no user-ansible@jenkins uptime'
+        //             sh 'ssh -v user-ansible@jenkins'
+        //             sh 'scp ./source/filename user-ansible@jenkins:/remotehost/target'
+        //         }
+        //     }
+        // }
         stage('Install ansible') {
             steps {
                 sh 'apk add ansible'
                 sh 'apk add python3'
                 sh "ansible --version"
-                sh ' echo "192.168.1.27   jenkins" >> /etc/hosts'
-                sh 'cat /etc/hosts'
+                // sh ' echo "192.168.1.27   jenkins" >> /etc/hosts'
+                // sh 'cat /etc/hosts'
                 sh " ansible-playbook -i inventaire.ini playbook.yml "
             }
         }
