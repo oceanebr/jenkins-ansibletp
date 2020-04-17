@@ -19,12 +19,8 @@ pipeline {
             }
         }
         stage('Deploiement Ansible') {
-            steps{
-                ansiblePlaybook (
-                    colorized: true, 
-                    become: true,
-                    playbook: 'playbook/.yml'
-                    )
+            steps {
+                sh 'ls'
             }
         }
     }
