@@ -33,7 +33,7 @@ pipeline {
                 steps {
                     sh 'apk add ansible'
                     sh 'apk add python3'
-                    sh 'ssh user-ansible@192.168.1.27'
+                    sh 'ssh -tt user-ansible@192.168.1.27'
                     // sh ' echo "192.168.1.27   jenkins" >> /etc/hosts'
                     // sh 'cat /etc/hosts'
                     sh " ansible-playbook -i inventaire.ini playbook.yml "
