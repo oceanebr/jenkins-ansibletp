@@ -1,5 +1,5 @@
 - name: "TP Jenkins Ansible"
-  hosts: 192.168.1.27
+  hosts: jenkins
   remote_user: root
   tasks:
     - name: "Installation de git"
@@ -11,7 +11,7 @@
       file:
         path: /home/tpjenkins
         state: directory
-        
+
     - name: "Telechargement tp"
       git:
         repo: https://github.com/web-slate/simple-react-app-with-unit-testing
