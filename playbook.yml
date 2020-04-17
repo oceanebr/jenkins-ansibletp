@@ -1,6 +1,6 @@
 - name: "TP Jenkins Ansible"
   hosts: jenkins
-  remote_user: user-ansible
+  remote_user: root
   tasks:
     - name: "Installation de git"
       apt:
